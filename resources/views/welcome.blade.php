@@ -346,10 +346,18 @@ Landing Page - Lazy Loading
       <a href="{{ route('detail.berita', $b->id) }}" class="news-card reveal">
         <div class="news-img">
           @if(!empty($b->img))
+          @env('local')
             <img class="lazy"
                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                 data-src="{{ url($b->img) }}"
+                 data-src="{{ url('')}}/berita/{{($b->img) }}"
                  alt="{{ $b->title }}">
+          @endenv
+          @production
+           <img class="lazy"
+                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                 data-src="{{ url('')}}/public/berita/{{($b->img) }}"
+                 alt="{{ $b->title }}">
+          @endproduction
           @else
             <div class="news-img-placeholder">
               <iconify-icon icon="ph:newspaper-bold" style="color:var(--cyan);font-size:3rem;opacity:.5;"></iconify-icon>
@@ -385,10 +393,18 @@ Landing Page - Lazy Loading
           @foreach($infografis as $info)
           <div class="info-slide">
             <div class="info-card" data-bs-toggle="modal" data-bs-target="#infografisModal{{ $info->id }}">
+              @env('local')
               <img class="lazy info-img"
                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                   data-src="{{ url($info->img) }}"
+                   data-src="{{ url('')}}/infografis/ {{($info->img) }}"
                    alt="{{ $info->name }}">
+              @endenv
+              @production
+              <img class="lazy info-img"
+                   src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                   data-src="{{ url('')}}/public/infografis/ {{($info->img) }}"
+                   alt="{{ $info->name }}">
+              @endproduction
               <div class="info-foot">
                 <iconify-icon icon="ph:download-simple-bold"></iconify-icon>
                 <p class="info-foot-text">Download Infografis</p>
@@ -419,7 +435,12 @@ Landing Page - Lazy Loading
           <iconify-icon icon="ph:download-bold"></iconify-icon> Download
         </a>
         {{-- Modal images: load eagerly saat modal dibuka --}}
-        <img src="{{ url($info->img) }}" class="img-fluid" alt="{{ $info->name }}">
+        @env('local')
+        <img src="{{ url('')}}/infografis/{{($info->img) }}" class="img-fluid" alt="{{ $info->name }}">
+        @endenv
+        @production
+        <img src="{{ url('')}}/public/infografis/{{($info->img) }}" class="img-fluid" alt="{{ $info->name }}">
+        @endproduction
       </div>
     </div>
   </div>
@@ -448,10 +469,18 @@ Landing Page - Lazy Loading
             <div class="event-card" data-bs-toggle="modal" data-bs-target="#modalKegiatan{{ $k->id }}">
               <div class="event-img">
                 @if(!empty($k->img))
+                @env('local')
                   <img class="lazy"
                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                       data-src="{{ url($k->img) }}"
+                       data-src="{{ url('')}}/kegiatan/{{($k->img) }}"
                        alt="{{ $k->name }}">
+                @endenv
+                @production
+                <img class="lazy"
+                       src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                       data-src="{{ url('')}}/public/kegiatan/{{($k->img) }}"
+                       alt="{{ $k->name }}">
+                @endproduction         
                 @else
                   <div class="event-img-placeholder">
                     <iconify-icon icon="ph:presentation-chart-bold" style="color:var(--cyan);font-size:3rem;opacity:.5;"></iconify-icon>
@@ -502,7 +531,12 @@ Landing Page - Lazy Loading
       </div>
       <div class="modal-body text-center p-4">
         @if($k->img)
-        <img src="{{ url($k->img) }}" class="img-fluid mb-3" alt="{{ $k->name }}">
+        @env('local')
+        <img src="{{ url('')}}/kegiatan/{{($k->img) }}" class="img-fluid mb-3" alt="{{ $k->name }}">
+        @endenv
+        @production
+        <img src="{{ url('')}}/public/kegiatan/{{($k->img) }}" class="img-fluid mb-3" alt="{{ $k->name }}">
+        @endproduction
         @endif
         @if($k->resume)
         <h6 class="text-start modal-resume-title"><strong>Resume Kegiatan:</strong></h6>

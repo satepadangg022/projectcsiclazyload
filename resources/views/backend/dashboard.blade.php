@@ -287,7 +287,13 @@ img.loaded {
                                                 @if(empty($d->img))
                                                 <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/images/default-image.png" style="height: 90px; width:auto;">
                                                 @else
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @env('local')
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/berita/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endenv
+
+                                                @production
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/public/berita/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endproduction
                                                 @endif
                                             </div>
                                         </td>
@@ -343,7 +349,14 @@ img.loaded {
                                                 @if(empty($d->img))
                                                 <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/images/default-image.png" style="height: 90px; width:auto;">
                                                 @else
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @env('local')
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/infografis/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endenv
+
+                                                @production
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/public/infografis/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endproduction
+                                    
                                                 @endif
                                             </div>
                                         </td>
@@ -393,7 +406,16 @@ img.loaded {
                                                 @if(empty($d->img))
                                                 <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/images/default-image.png" style="height: 90px; width:auto;">
                                                 @else
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/{{ $d->img }}" style="height: 90px; width:auto;">
+
+                                                @env('local')
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/kegiatan/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endenv
+
+                                                @production
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/public/kegiatan/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endproduction
+
+
                                                 @endif
                                             </div>
                                         </td>
@@ -500,7 +522,14 @@ img.loaded {
                                                 @if(empty($d->img))
                                                 <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/images/default-image.png" style="height: 90px; width:auto;">
                                                 @else
-                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/{{ $d->img }}" style="height: 90px; width:auto;">
+
+                                                @env('local')
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/pedoman/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endenv
+
+                                                @production
+                                                <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ url('') }}/public/pedoman/{{ $d->img }}" style="height: 90px; width:auto;">
+                                                @endproduction
                                                 @endif
                                             </div>
                                         </td>
