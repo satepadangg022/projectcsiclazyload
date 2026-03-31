@@ -396,13 +396,13 @@ Landing Page - Lazy Loading
               @env('local')
               <img class="lazy info-img"
                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                   data-src="{{ url('')}}/infografis/ {{($info->img) }}"
+                   data-src="{{ url('')}}/infografis/{{($info->img) }}"
                    alt="{{ $info->name }}">
               @endenv
               @production
               <img class="lazy info-img"
                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                   data-src="{{ url('')}}/public/infografis/ {{($info->img) }}"
+                   data-src="{{ url('')}}/public/infografis/{{($info->img) }}"
                    alt="{{ $info->name }}">
               @endproduction
               <div class="info-foot">
